@@ -1,5 +1,5 @@
 from flask import Flask,request,abort
-#from events.service import *
+from events.service import *
 from line_bot_api import *
 from events.basic import *
 #from events.admin import *
@@ -68,8 +68,8 @@ def handle_message(event):
     elif message_text == '@營業據點':
         location_event(event)
 
-#    elif message_text == '@預約服務':
-#        service_category_event(event)
+    elif message_text == '@預約服務':
+        service_category_event(event)
 
 #    elif message_text.startswith('*'):
 #        if event.source.user_id not in ['U23237fa985e2d6cdc28a38cea1d592e4']:
@@ -101,9 +101,7 @@ def handle_message(event):
 
 @handler.add(FollowEvent)
 def handle_follow(event):
-    welcome_msg="""讓始午成為你健康的一餐
-    
--選單>關於我們:可看到每日菜單"""
+    welcome_msg="""讓始午成為你健康的一餐"""
 
     line_bot_api.reply_message(
         event.reply_token,

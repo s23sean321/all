@@ -26,11 +26,12 @@ def about_us_event(event):
                                    
   (每日供膳菜單如下圖)。''', emojis=emoji)
 
-    sticker_message = StickerSendMessage(
-        package_id='6362',
-        sticker_id='11087932'
-    )
+    about_us_img = 'https://i.imgur.com/w9FlofV.jpg'
 
+    image_message = ImageSendMessage(
+        original_content_url=about_us_img,
+        preview_image_url=about_us_img
+    )
 
     line_bot_api.reply_message(
         event.reply_token,

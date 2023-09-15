@@ -26,6 +26,7 @@ def about_us_event(event):
                                    
   (每日供膳菜單如下圖)。''', emojis=emoji)
 
+
     about_us_img = 'https://i.imgur.com/w9FlofV.jpg'
 
     image_message = ImageSendMessage(
@@ -35,7 +36,7 @@ def about_us_event(event):
 
     line_bot_api.reply_message(
         event.reply_token,
-        [text_message, sticker_message, image_message])
+        [text_message, image_message])
     
 def location_event(event):
     location_message = LocationSendMessage(

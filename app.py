@@ -80,21 +80,21 @@ def handle_message(event):
 
 
 
-#@handler.add(PostbackEvent)
-#def handle_postback(event):
-#    data = dict(parse_qsl(event.postback.data))
-#    if data.get('action')=='service':
-#        service_event(event)
-#    elif data.get('action') =='select_date':
-#        service_select_date_event(event)
-#    elif data.get('action') == 'select_time':
-#        service_select_time_event(event)
-#    elif data.get('action') == 'confirm':
-#        service_confirm_event(event)
+@handler.add(PostbackEvent)
+def handle_postback(event):
+    data = dict(parse_qsl(event.postback.data))
+    if data.get('action')=='service':
+        service_event(event)
+    elif data.get('action') =='select_date':
+        service_select_date_event(event)
+    elif data.get('action') == 'select_time':
+        service_select_time_event(event)
+    elif data.get('action') == 'confirm':
+        service_confirm_event(event)
 #    elif data.get('action') == 'confirmed':
 #        service_confirmed_event(event)
 #    elif data.get('action') == 'cancel':
-#        service_cancel_event(event)
+#       service_cancel_event(event)
 
 
 

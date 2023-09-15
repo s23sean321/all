@@ -17,13 +17,13 @@ def about_us_event(event):
 
     text_message = TextSendMessage(text='''$ 始午健康餐盒 $
 原型食物-提供您每日健康的一餐
-
 營養標示-計算健康的每一步
-
 拒絕精緻-紫米、糙米、紅藜
-
 保溫用膳-提供保溫裝備直到您用餐
-
+                                   
+用膳地址:802高雄市苓雅區仁德街56號之1號
+定位專線:(07)-88888888
+                                   
   (每日供膳菜單如下圖)。''', emojis=emoji)
 
     sticker_message = StickerSendMessage(
@@ -31,12 +31,6 @@ def about_us_event(event):
         sticker_id='11087932'
     )
 
-    about_us_img = 'https://i.imgur.com/w9FlofV.jpg'
-
-    image_message = ImageSendMessage(
-        original_content_url=about_us_img,
-        preview_image_url=about_us_img
-    )
 
     line_bot_api.reply_message(
         event.reply_token,
